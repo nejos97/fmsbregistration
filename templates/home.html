@@ -1,0 +1,38 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="text-center">
+        <img src="{% static 'images/welcome.png' %}" width="30%" />
+    </div>
+    <div class="row align-items-center">
+        <div class="col-sm">
+            <h1>Bienvenue dans la page d'inscription au concours.</h1>
+        </div>
+        <div class="col-sm">
+            <div class="row align-items-center">
+                <div class="col">
+                    <a href="/start" class="btn btn-primary m-4 btn-block">Commencer</a>
+                </div>
+                <div class="col">
+                    <a href="/download" class="btn btn-primary m-4 btn-block">Re-telecharger ma fiche</a>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <a href="/update" class="btn btn-primary m-4 btn-block">Modifier mon dossier</a>
+                </div>
+                <div class="col">
+                    <a href="/delete" class="btn btn-primary m-4 btn-block">Supprimer ma candidature</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div></div>
+{% endblock %}

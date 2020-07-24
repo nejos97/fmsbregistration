@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2>Etape 4: Information de paiement de droit</h2>
+    <div class="alert alert-info" role="alert">
+        <h6>Veillez remplir le formulaire ci-dessous puis continuer.</h6>
+        <h6>Completer tout les champs du formulaire</h6>
+    </div>
+    <form method="POST" action="#" >
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="recu_paiement">Recu de paiment de la somme de <strong>20000(Vingt mille) Francs CFA</strong></label>
+            <input type="file" class="form-control-file" id="recu_paiement" name="recu_paiement" required>
+        </div>
+        
+        <button type="submit" class="btn btn-lg btn-primary">
+            Enregistrer et continuer
+        </button>
+    </form>
+</div>
+{% endblock %}

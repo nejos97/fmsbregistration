@@ -1,0 +1,73 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2>Etape 1: Information personelle</h2>
+    <div class="alert alert-info" role="alert">
+        <h6>Veillez remplir le formulaire ci-dessous puis continuer.</h6>
+        <h6>Completer tout les champs du formulaire</h6>
+    </div>
+    <div>
+        <form method="POST" action="#">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nom_complet">Nom & Prenom du candidat</label>
+                <input type="text" class="form-control" id="nom_complet" name="nom_complet" aria-describedby="nom_complet" required/>
+                <small id="nom_complet" class="form-text text-muted">
+                    Suivre l'ordre de l'acte de naissance/Follow the birth cerificate order
+                </small>
+            </div>
+            <div class="row form-group">
+                <div class="col">
+                    <label for="date_naissance">Date de naissance</label>
+                    <input type="date" class="form-control" id="date_naissance" name="date_naissance" required />
+                </div>
+                <div class="col">
+                    <label for="lieu_naissance">Lieu de naissance</label>
+                    <input type="text" class="form-control" id="lieu_naissance" name="lieu_naissance" required />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col">
+                    <label for="sexe">Sexe</label>
+                    <select class="form-control" name="sexe" id="sexe" required>
+                        <option value="Masculin">Masculin</option>
+                        <option value="Feminin">Feminin</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="nationalite">Nationalité</label>
+                    <input type="text" class="form-control" id="nationalite" name="nationalite" required/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col">
+                    <label for="region_origin">Region d'origine</label>
+                    <select name="region_origine" id="region_origine" class="form-control" required>
+                        <option value="Adamaoua" >Adamaoua</option>
+                        <option value="Centre">Centre</option>
+                        <option value="Est">Est</option>
+                        <option value="Extrême-Nord">Extrême-Nord</option>
+                        <option value="Littoral">Littoral</option>
+                        <option value="Nord">Nord</option>
+                        <option value="Nord-Ouest">Nord-Ouest</option>
+                        <option value="Ouest">Ouest</option>
+                        <option value="Sud">Sud</option>
+                        <option value="Sud-Ouest">Sud-Ouest</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="departement_origine">Departement d'origine</label>
+                    <input type="text" class="form-control" id="departement_origine" name="departement_origine" required/>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-lg btn-primary">
+                Enregistrer et continuer
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

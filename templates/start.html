@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<h2>Generation de votre numero de candidature.</h2>
+<div class="alert alert-info" role="alert">
+    <h6>Veillez le garde en tout securite et de maniere confidentielle votre code de candidature.</h6>
+</div>
+<div>
+    <h1>Votre code est {{dossier.code}} </h1>
+    <a href="/step/one/{{dossier.token}}" class="btn btn-lg btn-primary">
+        Enregistrer et continuer
+    </a>
+</div>
+{% endblock %}

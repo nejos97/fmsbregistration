@@ -1,0 +1,72 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2>Etape 2: Choix de la filiere</h2>
+    <div class="alert alert-info" role="alert">
+        <h6>Veillez remplir le formulaire ci-dessous puis continuer.</h6>
+        <h6>Completer tout les champs du formulaire</h6>
+    </div>
+    <div>
+        <form method="POST" action="#">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="filiere_choisie">Filiere choisie</label>
+                <select name="filiere_choisie" id="filiere_choisie" class="form-control" required>
+                    <option value="Sciences biomedicales">Sciences biomedicales</option>
+                    <option value="Sciences Infirmiere">Sciences Infirmiere</option>
+                    <option value="Radiologie et Imagerie Medicale">Radiologie et Imagerie Medicale</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="centre_examen">Centres d'examens</label>
+                <select name="centre_examen" id="centre_examen" class="form-control" required>
+                    <option value="Garoua">Garoua</option>
+                    <option value="Ngaoundere">Ngaoundere</option>
+                    <option value="Yaounde">Yaounde</option>
+                </select>
+            </div>
+            <div class="row form-group">
+                <div class="col">
+                    <label for="annee_probatoire">Année d'obtention du probatoire/Year GCE O</label>
+                    <input type="number" class="form-control" id="annee_probatoire" name="annee_probatoire" required />
+                </div>
+                <div class="col">
+                    <label for="mention_probatoire">Mention du probatoire/GCE O</label>
+                    <select name="mention_probatoire" id="mention_probatoire" class="form-control" required>
+                        <option value="Passable">Passable</option>
+                        <option value="Assez-bien">Assez-bien</option>
+                        <option value="Bien">Bien</option>
+                        <option value="Tres-bien">Tres-bien</option>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Parfait">Parfait</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col">
+                    <label for="annee_bac">Année d'obtention du BAC/Year GCE A</label>
+                    <input type="number" class="form-control" id="annee_bac" name="annee_bac"  required/>
+                </div>
+                <div class="col">
+                    <label for="mention_bac">Mention du Bac/GCE A</label>
+                    <select class="form-control" name="mention_bac" id="mention_bac" required>
+                        <option value="Passable">Passable</option>
+                        <option value="Assez-bien">Assez-bien</option>
+                        <option value="Bien">Bien</option>
+                        <option value="Tres-bien">Tres-bien</option>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Parfait">Parfait</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-lg btn-primary">
+                Enregistrer et continuer
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

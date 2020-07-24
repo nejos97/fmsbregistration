@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container">
+    <img src="{% static 'images/info.png' %}" width="40%" />
+    <h2>Felecitation votre dossier de candidature a ete enregistrer avec sucess.</h2>
+    <div class="alert alert-info" role="alert">
+        <h6>Veillez garde votre code de candidature en tout securite et de maniere confidentielle ce code.</h6>
+    </div>
+    <div>
+        <h4>Votre code est: JSNEHD82NQ</h4>
+        <a href="/downlaod/{{dossier.token}}" class="btn btn-lg btn-primary">
+            Telecharger mon recepisse de depot de dossier
+        </a>
+        <a href="/delete" class="btn btn-lg btn-danger">
+            Annuler & supprimer ma candidature
+        </a>
+    </div>
+</div>
+{% endblock %}

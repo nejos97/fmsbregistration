@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2>Etape 5: Autre Information</h2>
+    <div class="alert alert-info" role="alert">
+        <h6>Veillez remplir le formulaire ci-dessous puis continuer.</h6>
+        <h6>Completer tout les champs du formulaire</h6>
+    </div>
+    <div>
+        <form method="POST" action="#" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="photocopie_acte_naissance">Photocopie certifier de l'acte de naissance</label>
+                <input type="file" class="form-control-file" id="photocopie_acte_naissance" name="photocopie_acte_naissance" required>
+            </div>
+            <div class="form-group">
+                <label for="certificat_medical">Certificat medical</label>
+                <input type="file" class="form-control-file" id="certificat_medical" name="certificat_medical" required>
+            </div>
+            <div class="form-group">
+                <label for="photo_4x4">Photo 4x4</label>
+                <input type="file" class="form-control-file" id="photo_4x4" name="photo_4x4" required>
+            </div>
+            
+            <button type="submit" class="btn btn-lg btn-primary">
+                Enregistrer et continuer
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

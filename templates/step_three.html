@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2>Etape 3: Telechargement des diplomes</h2>
+    <div class="alert alert-info" role="alert">
+        <h6>Veillez remplir le formulaire ci-dessous puis continuer.</h6>
+        <h6>Completer tout les champs du formulaire</h6>
+    </div>
+    <div>
+        <form method="POST" action="#" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="photocopie_bac">Photocopie certifier conforme du BAC ou GCE</label>
+                <input type="file" class="form-control-file" id="photocopie_bac" name="photocopie_bac" required >
+            </div>
+            <div class="form-group">
+                <label for="photocopie_releve_note_bac">Photocopie certifier conforme du releve de note du BAC ou GCE A</label>
+                <input type="file" class="form-control-file" id="photocopie_releve_note_bac" name="photocopie_releve_note_bac" required >
+            </div>
+            <div class="form-group">
+                <label for="photocopie_releve_note_probatoire">Photocopie certifier conforme du releve de note du Probatoir ou GCE O</label>
+                <input type="file" class="form-control-file" id="photocopie_releve_note_probatoire" name="photocopie_releve_note_probatoire" required >
+            </div>
+            
+            <button type="submit" class="btn btn-lg btn-primary">
+                Enregistrer et continuer
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
