@@ -78,7 +78,10 @@ def step_three(request, token):
     context = {}
     dossier = get_object_or_404(Dossier, token=token)
     if request.method=="POST":
-        #redirection a la page suivant
+        dossier.photocopie_bac = request.FILES.get('photocopie_bac')
+        dossier.photocopie_releve_note_bac = request.FILES.get('photocopie_releve_note_bac')
+        dossier.photocopie_releve_note_probatoire = request.FILES.get('photocopie_releve_note_probatoire')
+        dossier.save()
         return redirect('registration:step_four', token=token)
 
     context["dossier"] = dossier
@@ -88,7 +91,8 @@ def step_four(request, token):
     context = {}
     dossier = get_object_or_404(Dossier, token=token)
     if request.method=="POST":
-        #redirection a la page suivant
+        dossier.recu_paiement = request.FILES.get('recu_paiement')
+        dossier.save()
         return redirect('registration:step_five', token=token)
 
     context["dossier"] = dossier
@@ -99,7 +103,9 @@ def step_five(request, token):
     dossier = get_object_or_404(Dossier, token=token)
 
     if request.method=="POST":
-        #redirection a la page suivant
+        dossier.photocopie_acte_naissance = request.FILES.get('photocopie_acte_naissance')
+        dossier.certificat_medical = request.FILES.get('certificat_medical')
+        dossier.photo_4x4 = request.FILES.get('photo_4x4')
         return redirect('registration:end', token=token)
 
     context["dossier"] = dossier
