@@ -13,7 +13,7 @@
     </div>
     <div>
         <h4>Votre code est: JSNEHD82NQ</h4>
-        <a href="/downlaod/{{dossier.token}}" class="btn btn-lg btn-primary">
+        <a href="{% url 'registration:download_recip' dossier.token %}" class="btn btn-lg btn-primary">
             Telecharger mon recepisse de depot de dossier
         </a>
         <a href="/delete" class="btn btn-lg btn-danger">

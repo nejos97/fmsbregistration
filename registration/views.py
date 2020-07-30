@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from registration.utils import get_random_string
-
+from registration.utils import generate_pdf
 from registration.models import Dossier
+from django_xhtml2pdf.utils import pdf_decorator
 
 # Create your views here.
-
 def home(request):
     return render(request, "home.html")
 
@@ -129,3 +129,21 @@ def delete(request):
             dossier.save()            
         context['dossier'] = dossier
     return render(request, "delete.html", context)
+
+def download(request):
+    context = {}
+    if request.method == "POST":
+        context["process"] = True 
+        code = request.POST['code']
+        dossier = Dossier.objects.filter(code=code).first()
+        if dossier != None:
+            return redirect('registration:download_recip', token=dossier.token)           
+        context['dossier'] = dossier
+    return render(request, "download.html", context)
+
+@pdf_decorator(pdfname='recepisse_candidat.pdf')
+def download_recip(request, token):
+    context = {}
+    context['dossier'] = dossier = Dossier.objects.filter(token=token).first()
+    return render(request, 'pdf/recepisse.html', context)
+    

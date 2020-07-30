@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        .bloc{
+            display: flex;
+        }
+        .section-one{
+            float: right;
+        }
+        .info{
+            font-size:x-large;
+        }
+    </style>
+    <body>
+        <h2>RECEPISSE DE DEPOT DES DOSSIER AU CONCOURS D'ENTREE EN PREMIERE ANNEE DES FILIERES BIOMEDICALE ET MEDICO-SANITAIRE A LA FACULTE DES SCIENCES DE L'UNIVERSITE DE NGAOUNDERE-SESSION DU AOUT 2020.</h2>
+        <div class="bloc">
+            <div class="section-one">
+                Info
+            </div>
+            <div>
+                image
+            </div>
+        </div>
+        <div class="info">
+            <p>Numero d'ordre {{dossier.code}} dossier depose le {{dossier.date_ajout}}</p>
+            <p>Noms et Prenom {{dossier.nom_complet}} </p>
+            <p>Né(e) le ____________________ à __________________________________</p>
+            <p>Filiere choisie________________________________________________</p>
+            <p>Centre de concours_____________________________________________</p>
+            <p>Candidat reguliere <input type="checkbox"> candidat libre <input type="checkbox"> </p>
+        </div>
+        <div>
+            <div>
+                <h3>SIGNATURE DU CANDIDAT</h3>
+                <p>Signature of candidat</p>
+            </div>
+            <div>
+                <h3>NOM ET SIGNATURE DU RESPONSABLE D'ACCUEIL</h3>
+                <p>Name and Signature of Officer</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,6 +1,5 @@
 from django.urls import path
 from registration import views
-
 app_name = 'registration'
 
 urlpatterns = [
@@ -13,4 +12,6 @@ urlpatterns = [
     path("step/five/<str:token>", views.step_five, name="step_five"),
     path("end/<str:token>", views.end, name="end"),
     path("delete", views.delete, name="delete"),
+    path("download", views.download, name="download"),
+    path("download/<str:token>", views.download_recip, name="download_recip"),
 ]

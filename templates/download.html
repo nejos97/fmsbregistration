@@ -1,0 +1,36 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Bienvenue dans la page d'inscription au concours. {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Re-telecharger mon coupon</h2>
+    <h6>Veillez renseigner dans le formulaire le code qui a ete generer par le system lors de votre inscription.</h6>
+    <br>
+    <div>
+        <div>
+            {% if process %}
+                {% if dossier == None %}
+                    <div class="alert alert-danger" role="alert">
+                        Code du dossier incorrect. Veillez verifier le code et reessayer.
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        <form method="POST" action="#">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="code">Code du dossier</label>
+                <input type="text" class="form-control" id="code" name="code" aria-describedby="code" required/>
+                <small id="code" class="form-text text-muted">
+                    C'est le code confidentielle generer pendant l'inscription.
+                </small>
+            </div>
+            
+            <button type="submit" class="btn btn-lg btn-success">
+                Telecharger mon recepisse
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -22,7 +22,7 @@
             <div class="row form-group">
                 <div class="col">
                     <label for="date_naissance">Date de naissance</label>
-                    <input type="date" class="form-control" id="date_naissance" name="date_naissance" required />
+                    <input class="form-control" id="date_naissance" name="date_naissance" required />
                 </div>
                 <div class="col">
                     <label for="lieu_naissance">Lieu de naissance</label>
@@ -69,5 +69,11 @@
             </button>
         </form>
     </div>
+    <script type="text/javascript">
+        $('#date_naissance').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'yyyy-mm-dd',
+        });
+    </script>
 </div>
 {% endblock %}
